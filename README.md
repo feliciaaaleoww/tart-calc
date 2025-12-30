@@ -24,9 +24,7 @@ A password-protected web app for managing tart production counts. Upload order C
 
 3. **Access the app:**
    - Open your browser to `http://localhost:8501`
-   - Default passwords:
-     - Admin: `admin123`
-     - Viewer: `baker2025`
+   - Configure passwords in `.streamlit/secrets.toml` before first use
 
 ## 📦 Deployment to Streamlit Cloud (FREE)
 
