@@ -39,8 +39,10 @@ def check_password():
 if not check_password():
     st.stop()
 
+import time
+
 # ------------------------ MAIN VIEWER INTERFACE ------------------------
-st.title("👁️ Tart Production Counts")
+st.title("👁️ Tart Production Counts (Live V2)")
 
 # Logout button
 col1, col2 = st.columns([6, 1])
@@ -57,17 +59,35 @@ if st.button("🔄 Refresh Data", type="primary"):
 
 # ------------------------ LOAD DATA ------------------------
 data_file = "data/production_data.json"
+# Add cache buster to URL to prevent stale data
+github_raw_url = f"https://raw.githubusercontent.com/rachelcyx-14/tart-calc/main/data/production_data.json?t={int(time.time())}"
+data = None
+source = "Unknown"
 
-if not os.path.exists(data_file):
-    st.warning("⚠️ No production data available yet. Please ask admin to upload orders or run sync first.")
-    st.stop()
-
+# 1. Try fetching from GitHub (Live Update)
 try:
-    with open(data_file, "r") as f:
-        data = json.load(f)
+    response = requests.get(github_raw_url, timeout=5)
+    if response.status_code == 200:
+        data = response.json()
+        source = "☁️ GitHub (Live)"
+    else:
+        st.warning(f"⚠️ GitHub fetch failed (Status: {response.status_code}). Using local cache.")
+except Exception as e:
+    st.warning(f"⚠️ GitHub fetch error: {e}. Using local cache.")
+
+# 2. Fallback to Local File (if GitHub fails or no internet)
+if not data:
+    if os.path.exists(data_file):
+        with open(data_file, "r") as f:
+            data = json.load(f)
+        source = "📂 Local Cache"
+    else:
+        st.warning("⚠️ No production data available yet. Please ask admin to upload orders or run sync first.")
+        st.stop()
     
     last_updated = data.get("last_updated", "Unknown")
-    st.info(f"📅 **Last Synced:** {last_updated}")
+    last_updated = data.get("last_updated", "Unknown")
+    st.info(f"📅 **Last Synced:** {last_updated} | **Source:** {source}")
     
     # ------------------------ DATE SELECTION ------------------------
     all_datasets = data.get("datasets", {})
