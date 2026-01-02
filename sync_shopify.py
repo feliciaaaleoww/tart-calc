@@ -166,8 +166,14 @@ def fetch_orders(days_back=60):
         limit=250
     )
     
-    print(f"✅ Found {len(orders)} orders")
-    return orders
+    all_orders = list(orders)
+    while orders.has_next_page():
+        print(f"    ...fetching next page ({len(all_orders)} so far)")
+        orders = orders.next_page()
+        all_orders.extend(orders)
+        
+    print(f"✅ Found {len(all_orders)} orders in total")
+    return all_orders
 
 
 def extract_date_tag(tags):
