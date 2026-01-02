@@ -155,7 +155,7 @@ def connect_to_shopify():
 
 import re
 
-def fetch_orders(days_back=7):
+def fetch_orders(days_back=60):
     """Fetch orders from the last N days."""
     created_at_min = (datetime.now() - timedelta(days=days_back)).isoformat()
     
@@ -423,8 +423,8 @@ def main():
         # Connect to Shopify
         connect_to_shopify()
         
-        # Fetch orders (last 7 days to catch any updates)
-        orders = fetch_orders(days_back=7)
+        # Fetch orders (last 60 days to catch any updates)
+        orders = fetch_orders(days_back=60)
         
         if not orders:
             print("⚠️ No orders found")
