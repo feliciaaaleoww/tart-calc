@@ -1,14 +1,15 @@
 # 🥧 Tart Production Calculator
 
-A password-protected web app for managing tart production counts. Upload order CSVs and share production summaries with your bakers.
+A password-protected web app for managing tart production counts. Automatically syncs with Shopify to provide real-time production numbers for your bakers.
 
 ## 🌟 Features
 
-- **👤 Admin Page**: Password-protected CSV upload and processing
-- **👁️ Viewer Page**: Password-protected display for bakers to view tart counts
-- **🔒 Secure**: Two-tier password system (admin + viewer)
-- **📊 Real-time Updates**: Bakers can refresh to see latest counts
-- **📱 Mobile-Friendly**: Works on phones and tablets
+- **🚀 Automated Sync**: Fetches orders from Shopify hourly (or on demand)
+- **👁️ Single-Page Viewer**: Instant access for bakers to view counts
+- **📅 Smart Dates**: Defaults to tomorrow's or day-after's production based on 12PM cutoff
+- **🔒 Secure**: API keys stored locally; only aggregated counts are shared
+- **🕵️ Data Verification**: View hidden order IDs to verify specific orders
+- **📊 Optimized**: Handles thousands of orders with "Open Order" filtering
 
 ## 🚀 Quick Start (Local Testing)
 
@@ -22,130 +23,46 @@ A password-protected web app for managing tart production counts. Upload order C
    streamlit run Home.py
    ```
 
-3. **Access the app:**
-   - Open your browser to `http://localhost:8501`
-   - Configure passwords in `.streamlit/secrets.toml` before first use
+3. **Manual Sync:**
+   - Double-click **`Manual_Sync.command`** in your folder to trigger an instant update.
 
-## 📦 Deployment to Streamlit Cloud (FREE)
+## 📦 Deployment to Streamlit Cloud
 
-### Step 1: Push to GitHub
+The app is deployed on Streamlit Cloud and connected to your GitHub repository.
 
-1. **Initialize Git** (if not already done):
-   ```bash
-   cd /Users/rc/Desktop/TA/sharecalc
-   git init
-   ```
-
-2. **Add all files:**
-   ```bash
-   git add .
-   ```
-
-3. **Commit:**
-   ```bash
-   git commit -m "Initial commit - Tart calculator app"
-   ```
-
-4. **Create a new repository on GitHub:**
-   - Go to https://github.com/new
-   - Name it `tart-calculator` (or any name you prefer)
-   - Choose **Private** (recommended for security)
-   - Click "Create repository"
-
-5. **Push to GitHub:**
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/tart-calculator.git
-   git branch -M main
-   git push -u origin main
-   ```
-   
-   Replace `YOUR_USERNAME` with your GitHub username.
-
-### Step 2: Deploy on Streamlit Cloud
-
-1. **Go to Streamlit Cloud:**
-   - Visit https://share.streamlit.io/
-   - Sign in with your GitHub account
-
-2. **Deploy your app:**
-   - Click "New app"
-   - Select your repository: `tart-calculator`
-   - Main file path: `Home.py`
-   - Click "Deploy"
-
-3. **Configure Secrets (IMPORTANT):**
-   - In Streamlit Cloud dashboard, go to your app settings
-   - Click "Secrets"
-   - Add the following:
-     ```toml
-     admin_password = "YOUR_STRONG_ADMIN_PASSWORD"
-     viewer_password = "YOUR_BAKER_PASSWORD"
-     ```
-   - Replace with your own passwords
-   - Click "Save"
-
-4. **Get your URL:**
-   - Your app will be live at: `https://YOUR_APP_NAME.streamlit.app`
-   - Share the viewer page with bakers: `https://YOUR_APP_NAME.streamlit.app/Viewer`
-
-## 🔑 Password Configuration
-
-### Local Development
-Edit `.streamlit/secrets.toml` to change passwords locally.
-
-### Production (Streamlit Cloud)
-Change passwords in the Streamlit Cloud dashboard under "Secrets".
+- **Main File**: `Home.py`
+- **Secrets**: Configured in Streamlit Cloud Dashboard (`admin_password`, `viewer_password`)
 
 ## 📖 How to Use
 
 ### For Admin (You):
-1. Go to the **Admin** page
-2. Enter admin password
-3. Upload your order CSV files
-4. Click "Process Orders & Save"
-5. Data is now available for bakers to view
+1. **Automatic**: The system runs every hour in the background.
+2. **Manual Update**: Double-click `Manual_Sync.command` on your Mac.
+3. **Verify**: Open the link to check the counts.
 
 ### For Bakers:
-1. Go to the **Viewer** page (or share direct link)
-2. Enter viewer password
-3. View production counts
-4. Click "Refresh Data" to see latest updates
+1. Open the **App Link**
+2. Enter the **Viewer Password**
+3. Select the **Delivery Date**
+4. View production summaries!
 
 ## 📁 File Structure
 
 ```
 sharecalc/
-├── Home.py                 # Landing page
-├── pages/
-│   ├── 1_👤_Admin.py      # Admin upload page
-│   └── 2_👁️_Viewer.py     # Viewer display page
+├── Home.py                 # Single-page Viewer App
+├── sync_shopify.py         # Automation script (Backend)
+├── run_sync.sh             # Shell wrapper for automation
+├── Manual_Sync.command     # Clickable button for manual sync
 ├── data/
-│   └── production_data.json  # Saved production data (auto-created)
+│   └── production_data.json  # Synced data
 ├── .streamlit/
-│   └── secrets.toml       # Password configuration (local only)
-├── requirements.txt       # Python dependencies
-├── .gitignore            # Git ignore rules
-└── README.md             # This file
+│   └── secrets.toml       # Passwords (Local)
+└── .env                    # Shopify API Keys (Local - NEVER SHARE)
 ```
 
 ## 🔒 Security Notes
 
-- ✅ CSV files are **never stored** on the server
-- ✅ Only production summaries are saved (no customer data)
-- ✅ Passwords are stored securely in Streamlit secrets
-- ✅ `.gitignore` prevents secrets from being committed to GitHub
-
-## 🆘 Troubleshooting
-
-**Q: Bakers see "No production data available"**
-- A: Admin needs to upload CSV files first through the Admin page
-
-**Q: Password not working**
-- A: Check that secrets are configured correctly in Streamlit Cloud dashboard
-
-**Q: App not updating after CSV upload**
-- A: Bakers need to click "Refresh Data" button on Viewer page
-
-## 📞 Support
-
-For issues or questions, contact the admin.
+- ✅ **API Keys**: Stored in `.env` (gitignored, local only)
+- ✅ **Customer Data**: Processed locally. Only aggregated counts are uploaded.
+- ✅ **Passwords**: Stored in `.streamlit/secrets.toml` or Streamlit Cloud Secrets.
