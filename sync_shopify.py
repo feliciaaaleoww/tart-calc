@@ -155,14 +155,14 @@ def connect_to_shopify():
 
 import re
 
-def fetch_orders(days_back=60):
-    """Fetch orders from the last N days."""
-    created_at_min = (datetime.now() - timedelta(days=days_back)).isoformat()
+def fetch_orders(days_back=None):
+    """Fetch all open (unfulfilled/active) orders."""
+    # We fetch 'open' orders to catch pre-orders made months ago but not yet fulfilled.
+    # We remove the created_at_min filter to ensure we get everything active.
     
-    print(f"📥 Fetching orders from {days_back} day(s) ago...")
+    print(f"📥 Fetching ALL open orders (processing active pre-orders)...")
     orders = shopify.Order.find(
-        status="any",
-        created_at_min=created_at_min,
+        status="open",
         limit=250
     )
     
@@ -429,8 +429,8 @@ def main():
         # Connect to Shopify
         connect_to_shopify()
         
-        # Fetch orders (last 60 days to catch any updates)
-        orders = fetch_orders(days_back=60)
+        # Fetch all open orders (ignores archived/completed ones)
+        orders = fetch_orders()
         
         if not orders:
             print("⚠️ No orders found")
