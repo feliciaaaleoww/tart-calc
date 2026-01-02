@@ -1,7 +1,8 @@
 import streamlit as st
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
+import pandas as pd
 
 st.set_page_config(page_title="Viewer - Tart Counts", page_icon="👁️", layout="wide")
 
@@ -58,7 +59,7 @@ if st.button("🔄 Refresh Data", type="primary"):
 data_file = "data/production_data.json"
 
 if not os.path.exists(data_file):
-    st.warning("⚠️ No production data available yet. Please ask admin to upload orders first.")
+    st.warning("⚠️ No production data available yet. Please ask admin to upload orders or run sync first.")
     st.stop()
 
 try:
@@ -66,25 +67,74 @@ try:
         data = json.load(f)
     
     last_updated = data.get("last_updated", "Unknown")
-    st.info(f"📅 **Last Updated:** {last_updated}")
+    st.info(f"📅 **Last Synced:** {last_updated}")
     
+    # ------------------------ DATE SELECTION ------------------------
+    all_datasets = data.get("datasets", {})
+    
+    # Fallback for old data format
+    if not all_datasets and "production_summary" in data:
+        all_datasets = {"Legacy / Manual Upload": data}
+
+    if not all_datasets:
+        st.warning("No date-tagged data found.")
+        st.stop()
+        
+    # Get available dates and sort them
+    available_dates = sorted(list(all_datasets.keys()))
+    
+    # Determine Default Date Logic
+    # Logic:
+    # - If time < 12PM: Default to Tomorrow
+    # - If time >= 12PM: Default to Day After Tomorrow
+    now = datetime.now()
+    if now.hour < 12:
+        target_date = now + timedelta(days=1)
+    else:
+        target_date = now + timedelta(days=2)
+        
+    default_date_str = target_date.strftime("%d-%m-%Y")
+    
+    # Find matching index for default date
+    default_index = 0
+    if default_date_str in available_dates:
+        default_index = available_dates.index(default_date_str)
+    elif "No Date Tag" in available_dates:
+         # Optionally default to "No Date Tag" if target not found? Or just first available
+         pass
+
+    selected_date = st.selectbox(
+        "📅 **Select Delivery Date**", 
+        options=available_dates,
+        index=default_index
+    )
+    
+    # Get data for selected date
+    selected_data = all_datasets.get(selected_date, {})
+    
+    if not selected_data:
+        st.warning(f"No data found for {selected_date}")
+        st.stop()
+
+    st.markdown(f"### Showing counts for: **{selected_date}**")
+    st.markdown("---")
+
     # Display data in columns
     col1, col2 = st.columns(2)
     
     with col1:
         # Production Summary
         st.subheader("🍓 Production Summary")
-        if data.get("production_summary"):
-            import pandas as pd
-            production_df = pd.DataFrame(data["production_summary"])
+        if selected_data.get("production_summary"):
+            production_df = pd.DataFrame(selected_data["production_summary"])
             st.dataframe(production_df, use_container_width=True, hide_index=True)
         else:
             st.info("No production data available.")
         
         # Box Summary
         st.subheader("📦 Box Summary")
-        if data.get("box_summary"):
-            box_df = pd.DataFrame(data["box_summary"])
+        if selected_data.get("box_summary"):
+            box_df = pd.DataFrame(selected_data["box_summary"])
             st.dataframe(box_df, use_container_width=True, hide_index=True)
         else:
             st.info("No box data available.")
@@ -92,16 +142,16 @@ try:
     with col2:
         # Total Summary
         st.subheader("📊 Total Summary")
-        if data.get("total_summary"):
-            total_df = pd.DataFrame(data["total_summary"])
+        if selected_data.get("total_summary"):
+            total_df = pd.DataFrame(selected_data["total_summary"])
             st.dataframe(total_df, use_container_width=True, hide_index=True)
         else:
             st.info("No total summary available.")
         
         # Party Set Summary
-        if data.get("party_summary") and len(data["party_summary"]) > 0:
+        if selected_data.get("party_summary") and len(selected_data["party_summary"]) > 0:
             st.subheader("🎉 Party Set Summary")
-            party_df = pd.DataFrame(data["party_summary"])
+            party_df = pd.DataFrame(selected_data["party_summary"])
             st.dataframe(party_df, use_container_width=True, hide_index=True)
 
 except Exception as e:
@@ -109,4 +159,4 @@ except Exception as e:
     st.info("Please contact admin if this problem persists.")
 
 st.markdown("---")
-st.caption("💡 Click 'Refresh Data' to see the latest updates from admin.")
+st.caption("💡 Data updates automatically every hour. Click 'Refresh Data' to pull the latest update.")

@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/Users/rc/Desktop/TA/sharecalc/sync_shopify.py", line 13, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+
+🚀 Starting Shopify sync at 2026-01-02 08:25:54
+============================================================
+✅ Connected to Shopify: vpxskt-mi.myshopify.com
+📥 Fetching orders from 7 day(s) ago...
+✅ Found 232 orders
+📊 Processing 337 line items from 232 orders
+   Processing date group: 02-01-2026
+   Processing date group: 16-12-2025
+   Processing date group: 23-12-2025
+   Processing date group: 21-12-2025
+   Processing date group: 09-12-2025
+   Processing date group: 03-01-2026
+   Processing date group: 04-01-2026
+   Processing date group: None
+   Processing date group: 31-12-2025
+   Processing date group: 10-01-2026
+   Processing date group: 30-12-2025
+   Processing date group: 06-01-2026
+   Processing date group: 28-11-2025
+   Processing date group: 07-01-2026
+   Processing date group: 28-12-2025
+   Processing date group: 27-12-2025
+✅ Data saved to data/production_data.json
+ℹ️ No changes to commit
+============================================================
+✅ Sync completed successfully!

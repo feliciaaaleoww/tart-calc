@@ -1,6 +1,9 @@
 # Ignore secrets file (contains passwords)
 .streamlit/secrets.toml
 
+# Ignore environment file (contains Shopify API credentials)
+.env
+
 # Ignore data directory (contains processed production data)
 data/
 
