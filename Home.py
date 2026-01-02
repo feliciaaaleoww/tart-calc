@@ -159,4 +159,12 @@ except Exception as e:
     st.info("Please contact admin if this problem persists.")
 
 st.markdown("---")
+# Hidden Order IDs Section
+with st.expander("🕵️ Show Included Order IDs"):
+    if selected_data.get("order_ids"):
+        st.write(", ".join(selected_data["order_ids"]))
+        st.caption(f"Total Orders: {len(selected_data['order_ids'])}")
+    else:
+        st.info("No order IDs available for this date.")
+
 st.caption("💡 Data updates automatically every hour. Click 'Refresh Data' to pull the latest update.")

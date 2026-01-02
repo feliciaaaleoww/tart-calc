@@ -330,7 +330,8 @@ def calculate_summary_for_group(orders_df):
         "production_summary": production_summary_df.to_dict(orient="records"),
         "total_summary": total_summary_df.to_dict(orient="records"),
         "box_summary": box_summary.to_dict(orient="records") if not box_summary.empty else [],
-        "party_summary": party_summary.to_dict(orient="records") if not party_summary.empty else []
+        "party_summary": party_summary.to_dict(orient="records") if not party_summary.empty else [],
+        "order_ids": sorted(list(orders_df["Name"].unique())) if not orders_df.empty else []
     }
 
 
@@ -401,7 +402,7 @@ def commit_and_push():
             return
         
         # Add, commit, and push
-        subprocess.run(["git", "add", "data/production_data.json"], check=True)
+        subprocess.run(["git", "add", "-f", "data/production_data.json"], check=True)
         subprocess.run(
             ["git", "commit", "-m", f"Auto-update: Shopify sync at {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
             check=True
