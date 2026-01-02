@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime, timedelta
 import pandas as pd
+import requests
 
 st.set_page_config(page_title="Tart Production Calculator", page_icon="🥧", layout="wide")
 
