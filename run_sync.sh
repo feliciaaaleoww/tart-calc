@@ -4,6 +4,12 @@
 
 cd "$(dirname "$0")"
 
+# Load environment variables
+source .env 2>/dev/null
+
+# Fix for git credentials in launchd (allows finding Keychain)
+export HOME=/Users/rc
+
 # Activate virtual environment if it exists
 if [ -d "venv" ]; then
     source venv/bin/activate
