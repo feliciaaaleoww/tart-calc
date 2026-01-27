@@ -1,15 +1,75 @@
 {
-  "last_updated": "2026-01-27 19:05:04",
+  "last_updated": "2026-01-27 21:11:49",
   "datasets": {
+    "13-02-2026": {
+      "production_summary": [],
+      "total_summary": [
+        {
+          "Category": "Total Custard Tarts",
+          "Total": 0.0
+        },
+        {
+          "Category": "Cheese (Blueberry & Lotus)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Cheese (Lemon & Strawberry)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Cheese (Apple Crumble)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total Cheese Tarts",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total No. of Premium",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total No. of Christmas",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total Tart Shells Required",
+          "Total": 0.0
+        },
+        {
+          "Category": "Approx Butter Required (kg)",
+          "Total": 0.0
+        }
+      ],
+      "box_summary": [
+        {
+          "Item Name": "Pineapple Tart - 10pcs Original / 1 box",
+          "Total Boxes": 5
+        },
+        {
+          "Item Name": "Pineapple Tart - 5pcs Original 5pcs Salted Egg / 1 box",
+          "Total Boxes": 3
+        },
+        {
+          "Item Name": "ALL",
+          "Total Boxes": 8
+        }
+      ],
+      "party_summary": [],
+      "order_ids": [
+        "#15029",
+        "#15080"
+      ]
+    },
     "01-02-2026": {
       "production_summary": [
         {
           "Flavor": "Strawberry",
-          "Total Qty": 36
+          "Total Qty": 41
         },
         {
           "Flavor": "Kiwi",
-          "Total Qty": 36
+          "Total Qty": 41
         },
         {
           "Flavor": "Lychee",
@@ -17,7 +77,7 @@
         },
         {
           "Flavor": "Mango",
-          "Total Qty": 36
+          "Total Qty": 41
         },
         {
           "Flavor": "Blueberry",
@@ -29,11 +89,11 @@
         },
         {
           "Flavor": "Blueberry Cheese",
-          "Total Qty": 32
+          "Total Qty": 37
         },
         {
           "Flavor": "Lotus Biscoff Cheese",
-          "Total Qty": 30
+          "Total Qty": 35
         },
         {
           "Flavor": "Passion Fruit",
@@ -63,11 +123,11 @@
       "total_summary": [
         {
           "Category": "Total Custard Tarts",
-          "Total": 204.0
+          "Total": 219.0
         },
         {
           "Category": "Cheese (Blueberry & Lotus)",
-          "Total": 62.0
+          "Total": 72.0
         },
         {
           "Category": "Cheese (Lemon & Strawberry)",
@@ -79,7 +139,7 @@
         },
         {
           "Category": "Total Cheese Tarts",
-          "Total": 70.0
+          "Total": 80.0
         },
         {
           "Category": "Total No. of Premium",
@@ -91,14 +151,18 @@
         },
         {
           "Category": "Total Tart Shells Required",
-          "Total": 314.0
+          "Total": 339.0
         },
         {
           "Category": "Approx Butter Required (kg)",
-          "Total": 4.486
+          "Total": 4.843
         }
       ],
       "box_summary": [
+        {
+          "Item Name": "Assorted Tarts - 25pcs",
+          "Total Boxes": 1
+        },
         {
           "Item Name": "Assorted Tarts - 36pcs",
           "Total Boxes": 1
@@ -129,11 +193,11 @@
         },
         {
           "Item Name": "Pineapple Tart - 10pcs Original / 1 box",
-          "Total Boxes": 2
+          "Total Boxes": 4
         },
         {
           "Item Name": "Pineapple Tart - 5pcs Original 5pcs Salted Egg / 1 box",
-          "Total Boxes": 1
+          "Total Boxes": 3
         },
         {
           "Item Name": "Pineapple Tart - 5pcs Original 5pcs Salted Egg / 12 box",
@@ -145,7 +209,7 @@
         },
         {
           "Item Name": "ALL",
-          "Total Boxes": 17
+          "Total Boxes": 22
         }
       ],
       "party_summary": [
@@ -161,7 +225,9 @@
         "#15030",
         "#15037",
         "#15058",
-        "#15077"
+        "#15077",
+        "#15078",
+        "#15079"
       ]
     },
     "31-01-2026": {
@@ -1365,65 +1431,6 @@
       "party_summary": [],
       "order_ids": [
         "#15032"
-      ]
-    },
-    "13-02-2026": {
-      "production_summary": [],
-      "total_summary": [
-        {
-          "Category": "Total Custard Tarts",
-          "Total": 0.0
-        },
-        {
-          "Category": "Cheese (Blueberry & Lotus)",
-          "Total": 0.0
-        },
-        {
-          "Category": "Cheese (Lemon & Strawberry)",
-          "Total": 0.0
-        },
-        {
-          "Category": "Cheese (Apple Crumble)",
-          "Total": 0.0
-        },
-        {
-          "Category": "Total Cheese Tarts",
-          "Total": 0.0
-        },
-        {
-          "Category": "Total No. of Premium",
-          "Total": 0.0
-        },
-        {
-          "Category": "Total No. of Christmas",
-          "Total": 0.0
-        },
-        {
-          "Category": "Total Tart Shells Required",
-          "Total": 0.0
-        },
-        {
-          "Category": "Approx Butter Required (kg)",
-          "Total": 0.0
-        }
-      ],
-      "box_summary": [
-        {
-          "Item Name": "Pineapple Tart - 10pcs Original / 1 box",
-          "Total Boxes": 3
-        },
-        {
-          "Item Name": "Pineapple Tart - 5pcs Original 5pcs Salted Egg / 1 box",
-          "Total Boxes": 3
-        },
-        {
-          "Item Name": "ALL",
-          "Total Boxes": 6
-        }
-      ],
-      "party_summary": [],
-      "order_ids": [
-        "#15029"
       ]
     },
     "20-02-2026": {
