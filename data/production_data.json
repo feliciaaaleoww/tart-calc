@@ -1,27 +1,27 @@
 {
-  "last_updated": "2026-02-22 19:23:05",
+  "last_updated": "2026-02-22 21:08:14",
   "datasets": {
     "28-02-2026": {
       "production_summary": [
         {
           "Flavor": "Strawberry",
-          "Total Qty": 41
+          "Total Qty": 51
         },
         {
           "Flavor": "Kiwi",
-          "Total Qty": 41
+          "Total Qty": 51
         },
         {
           "Flavor": "Lychee",
-          "Total Qty": 36
+          "Total Qty": 46
         },
         {
           "Flavor": "Mango",
-          "Total Qty": 41
+          "Total Qty": 51
         },
         {
           "Flavor": "Blueberry",
-          "Total Qty": 36
+          "Total Qty": 46
         },
         {
           "Flavor": "Peach",
@@ -50,12 +50,16 @@
         {
           "Flavor": "Chocolate Pistachio",
           "Total Qty": 16
+        },
+        {
+          "Flavor": "Musang King Tart (3pcs)",
+          "Total Qty": 2
         }
       ],
       "total_summary": [
         {
           "Category": "Total Custard Tarts",
-          "Total": 231.0
+          "Total": 281.0
         },
         {
           "Category": "Cheese (Blueberry & Lotus)",
@@ -83,11 +87,11 @@
         },
         {
           "Category": "Total Tart Shells Required",
-          "Total": 325.0
+          "Total": 375.0
         },
         {
           "Category": "Approx Butter Required (kg)",
-          "Total": 4.643
+          "Total": 5.357
         }
       ],
       "box_summary": [
@@ -98,6 +102,10 @@
         {
           "Item Name": "Cheese Tarts - 36pcs",
           "Total Boxes": 1
+        },
+        {
+          "Item Name": "Fruit Tarts - 25pcs",
+          "Total Boxes": 2
         },
         {
           "Item Name": "Fruit Tarts - 36pcs",
@@ -116,8 +124,12 @@
           "Total Boxes": 1
         },
         {
+          "Item Name": "Musang King Tart (3pcs)",
+          "Total Boxes": 2
+        },
+        {
           "Item Name": "ALL",
-          "Total Boxes": 12
+          "Total Boxes": 16
         }
       ],
       "party_summary": [],
@@ -129,30 +141,32 @@
         "#15873",
         "#15898",
         "#15922",
-        "#15923"
+        "#15923",
+        "#15924",
+        "#15927"
       ]
     },
     "24-02-2026": {
       "production_summary": [
         {
           "Flavor": "Strawberry",
-          "Total Qty": 55
+          "Total Qty": 64
         },
         {
           "Flavor": "Kiwi",
-          "Total Qty": 55
+          "Total Qty": 64
         },
         {
           "Flavor": "Lychee",
-          "Total Qty": 39
+          "Total Qty": 48
         },
         {
           "Flavor": "Mango",
-          "Total Qty": 55
+          "Total Qty": 64
         },
         {
           "Flavor": "Blueberry",
-          "Total Qty": 39
+          "Total Qty": 44
         },
         {
           "Flavor": "Peach",
@@ -186,7 +200,7 @@
       "total_summary": [
         {
           "Category": "Total Custard Tarts",
-          "Total": 273.0
+          "Total": 314.0
         },
         {
           "Category": "Cheese (Blueberry & Lotus)",
@@ -214,11 +228,11 @@
         },
         {
           "Category": "Total Tart Shells Required",
-          "Total": 428.0
+          "Total": 469.0
         },
         {
           "Category": "Approx Butter Required (kg)",
-          "Total": 6.114
+          "Total": 6.7
         }
       ],
       "box_summary": [
@@ -239,8 +253,12 @@
           "Total Boxes": 3
         },
         {
+          "Item Name": "Fruit Tarts - 16pcs",
+          "Total Boxes": 1
+        },
+        {
           "Item Name": "Fruit Tarts - 25pcs",
-          "Total Boxes": 3
+          "Total Boxes": 4
         },
         {
           "Item Name": "Fruit Tarts - 36pcs",
@@ -264,7 +282,7 @@
         },
         {
           "Item Name": "ALL",
-          "Total Boxes": 19
+          "Total Boxes": 21
         }
       ],
       "party_summary": [
@@ -287,7 +305,9 @@
         "#15906",
         "#15917",
         "#15919",
-        "#15921"
+        "#15921",
+        "#15925",
+        "#15926"
       ]
     },
     "25-02-2026": {
