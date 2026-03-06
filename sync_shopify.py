@@ -12,13 +12,16 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 import pandas as pd
 from dotenv import load_dotenv
+import requests
 import shopify
 
 # Load environment variables
 load_dotenv()
 
 SHOPIFY_SHOP_URL = os.getenv("SHOPIFY_SHOP_URL")
-SHOPIFY_ACCESS_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN")
+# SHOPIFY_ACCESS_TOKEN = os.getenv("SHOPIFY_ACCESS_TOKEN")
+SHOPIFY_CLIENT_ID = os.getenv("SHOPIFY_CLIENT_ID")
+SHOPIFY_CLIENT_SECRET = os.getenv("SHOPIFY_CLIENT_SECRET")
 SHOPIFY_API_VERSION = os.getenv("SHOPIFY_API_VERSION", "2024-01")
 
 # Recipes (same as in interface_new.py)
@@ -142,14 +145,56 @@ party_expansions = {
 }
 
 
+# def connect_to_shopify():
+#     """Initialize Shopify API connection."""
+#     if not SHOPIFY_SHOP_URL or not SHOPIFY_ACCESS_TOKEN:
+#         raise ValueError("Missing Shopify credentials. Check your .env file.")
+    
+#     shop_url = f"https://{SHOPIFY_SHOP_URL}"
+#     session = shopify.Session(shop_url, SHOPIFY_API_VERSION, SHOPIFY_ACCESS_TOKEN)
+#     shopify.ShopifyResource.activate_session(session)
+#     print(f"✅ Connected to Shopify: {SHOPIFY_SHOP_URL}")
+
+def get_shopify_access_token():
+    """Exchange client credentials for a Shopify Admin API access token."""
+    if not SHOPIFY_SHOP_URL or not SHOPIFY_CLIENT_ID or not SHOPIFY_CLIENT_SECRET:
+        raise ValueError("Missing Shopify credentials. Check your .env file.")
+
+    token_url = f"https://{SHOPIFY_SHOP_URL}/admin/oauth/access_token"
+
+    response = requests.post(
+        token_url,
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        data={
+            "grant_type": "client_credentials",
+            "client_id": SHOPIFY_CLIENT_ID,
+            "client_secret": SHOPIFY_CLIENT_SECRET,
+        },
+        timeout=30,
+    )
+
+    if not response.ok:
+        raise RuntimeError(
+            f"Token request failed: {response.status_code} {response.text}"
+        )
+
+    payload = response.json()
+    access_token = payload.get("access_token")
+
+    if not access_token:
+        raise RuntimeError(f"No access_token returned: {payload}")
+
+    return access_token
+
+
 def connect_to_shopify():
     """Initialize Shopify API connection."""
-    if not SHOPIFY_SHOP_URL or not SHOPIFY_ACCESS_TOKEN:
-        raise ValueError("Missing Shopify credentials. Check your .env file.")
-    
+    access_token = get_shopify_access_token()
+
     shop_url = f"https://{SHOPIFY_SHOP_URL}"
-    session = shopify.Session(shop_url, SHOPIFY_API_VERSION, SHOPIFY_ACCESS_TOKEN)
+    session = shopify.Session(shop_url, SHOPIFY_API_VERSION, access_token)
     shopify.ShopifyResource.activate_session(session)
+
     print(f"✅ Connected to Shopify: {SHOPIFY_SHOP_URL}")
 
 
