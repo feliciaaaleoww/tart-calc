@@ -1,31 +1,31 @@
 {
-  "last_updated": "2026-04-08 10:55:21",
+  "last_updated": "2026-04-08 11:55:05",
   "datasets": {
     "11-04-2026": {
       "production_summary": [
         {
           "Flavor": "Strawberry",
-          "Total Qty": 190
+          "Total Qty": 196
         },
         {
           "Flavor": "Kiwi",
-          "Total Qty": 190
+          "Total Qty": 196
         },
         {
           "Flavor": "Lychee",
-          "Total Qty": 155
+          "Total Qty": 161
         },
         {
           "Flavor": "Mango",
-          "Total Qty": 190
+          "Total Qty": 196
         },
         {
           "Flavor": "Blueberry",
-          "Total Qty": 147
+          "Total Qty": 153
         },
         {
           "Flavor": "Peach",
-          "Total Qty": 162
+          "Total Qty": 168
         },
         {
           "Flavor": "Blueberry Cheese",
@@ -75,7 +75,7 @@
       "total_summary": [
         {
           "Category": "Total Custard Tarts",
-          "Total": 1034.0
+          "Total": 1070.0
         },
         {
           "Category": "Cheese (Blueberry & Lotus)",
@@ -103,11 +103,11 @@
         },
         {
           "Category": "Total Tart Shells Required",
-          "Total": 1699.0
+          "Total": 1735.0
         },
         {
           "Category": "Approx Butter Required (kg)",
-          "Total": 24.271
+          "Total": 24.786
         }
       ],
       "box_summary": [
@@ -145,7 +145,7 @@
         },
         {
           "Item Name": "Fruit Tarts - 36pcs",
-          "Total Boxes": 22
+          "Total Boxes": 23
         },
         {
           "Item Name": "Chocolate Bliss",
@@ -173,7 +173,7 @@
         },
         {
           "Item Name": "ALL",
-          "Total Boxes": 65
+          "Total Boxes": 66
         }
       ],
       "party_summary": [
@@ -222,7 +222,105 @@
         "#17413",
         "#17417",
         "#17422",
-        "#17427"
+        "#17427",
+        "#17429"
+      ]
+    },
+    "17-04-2026": {
+      "production_summary": [
+        {
+          "Flavor": "Strawberry",
+          "Total Qty": 12
+        },
+        {
+          "Flavor": "Kiwi",
+          "Total Qty": 12
+        },
+        {
+          "Flavor": "Lychee",
+          "Total Qty": 12
+        },
+        {
+          "Flavor": "Mango",
+          "Total Qty": 12
+        },
+        {
+          "Flavor": "Blueberry",
+          "Total Qty": 12
+        },
+        {
+          "Flavor": "Peach",
+          "Total Qty": 12
+        },
+        {
+          "Flavor": "Blueberry Cheese",
+          "Total Qty": 13
+        },
+        {
+          "Flavor": "Lotus Biscoff Cheese",
+          "Total Qty": 12
+        }
+      ],
+      "total_summary": [
+        {
+          "Category": "Total Custard Tarts",
+          "Total": 72.0
+        },
+        {
+          "Category": "Cheese (Blueberry & Lotus)",
+          "Total": 25.0
+        },
+        {
+          "Category": "Cheese (Lemon & Strawberry)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Cheese (Apple Crumble)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total Cheese Tarts",
+          "Total": 25.0
+        },
+        {
+          "Category": "Total No. of Premium",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total No. of Christmas",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total Tart Shells Required",
+          "Total": 97.0
+        },
+        {
+          "Category": "Approx Butter Required (kg)",
+          "Total": 1.386
+        }
+      ],
+      "box_summary": [
+        {
+          "Item Name": "Cheese Tarts - 25pcs",
+          "Total Boxes": 1
+        },
+        {
+          "Item Name": "Fruit Tarts - 36pcs",
+          "Total Boxes": 2
+        },
+        {
+          "Item Name": "ALL",
+          "Total Boxes": 3
+        }
+      ],
+      "party_summary": [
+        {
+          "Item Name": "Grand Party Set - Type A: 36 Fruit + 36 Fruit + 25 Cheese",
+          "Total Party Sets": 1
+        }
+      ],
+      "order_ids": [
+        "#17428"
       ]
     },
     "10-04-2026": {
