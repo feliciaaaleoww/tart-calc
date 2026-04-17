@@ -61,7 +61,7 @@ if st.button("🔄 Refresh Data", type="primary"):
 # ------------------------ LOAD DATA ------------------------
 data_file = "data/production_data.json"
 # Add cache buster to URL to prevent stale data
-github_raw_url = f"https://raw.githubusercontent.com/rachelcyx-14/tart-calc/main/data/production_data.json?t={int(time.time())}"
+github_raw_url = f"https://raw.githubusercontent.com/feliciaaaleoww/tart-calc/main/data/production_data.json?t={int(time.time())}"
 data = None
 source = "Unknown"
 
