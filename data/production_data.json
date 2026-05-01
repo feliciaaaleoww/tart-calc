@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-05-01 13:47:21",
+  "last_updated": "2026-05-01 14:54:38",
   "datasets": {
     "02-05-2026": {
       "production_summary": [
         {
           "Flavor": "Strawberry",
-          "Total Qty": 125
+          "Total Qty": 130
         },
         {
           "Flavor": "Kiwi",
-          "Total Qty": 125
+          "Total Qty": 130
         },
         {
           "Flavor": "Lychee",
@@ -17,7 +17,7 @@
         },
         {
           "Flavor": "Mango",
-          "Total Qty": 125
+          "Total Qty": 130
         },
         {
           "Flavor": "Blueberry",
@@ -29,11 +29,11 @@
         },
         {
           "Flavor": "Blueberry Cheese",
-          "Total Qty": 131
+          "Total Qty": 136
         },
         {
           "Flavor": "Lotus Biscoff Cheese",
-          "Total Qty": 126
+          "Total Qty": 131
         },
         {
           "Flavor": "Passion Fruit",
@@ -75,11 +75,11 @@
       "total_summary": [
         {
           "Category": "Total Custard Tarts",
-          "Total": 623.0
+          "Total": 638.0
         },
         {
           "Category": "Cheese (Blueberry & Lotus)",
-          "Total": 257.0
+          "Total": 267.0
         },
         {
           "Category": "Cheese (Lemon & Strawberry)",
@@ -91,7 +91,7 @@
         },
         {
           "Category": "Total Cheese Tarts",
-          "Total": 289.0
+          "Total": 299.0
         },
         {
           "Category": "Total No. of Premium",
@@ -103,17 +103,17 @@
         },
         {
           "Category": "Total Tart Shells Required",
-          "Total": 1088.0
+          "Total": 1113.0
         },
         {
           "Category": "Approx Butter Required (kg)",
-          "Total": 15.543
+          "Total": 15.9
         }
       ],
       "box_summary": [
         {
           "Item Name": "Assorted Tarts - 25pcs",
-          "Total Boxes": 4
+          "Total Boxes": 5
         },
         {
           "Item Name": "Assorted Tarts - 36pcs",
@@ -181,7 +181,7 @@
         },
         {
           "Item Name": "ALL",
-          "Total Boxes": 48
+          "Total Boxes": 49
         }
       ],
       "party_summary": [
@@ -228,7 +228,63 @@
         "#18232",
         "#18234",
         "#18238",
-        "#18240"
+        "#18240",
+        "#18242"
+      ]
+    },
+    "13-05-2026": {
+      "production_summary": [],
+      "total_summary": [
+        {
+          "Category": "Total Custard Tarts",
+          "Total": 0.0
+        },
+        {
+          "Category": "Cheese (Blueberry & Lotus)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Cheese (Lemon & Strawberry)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Cheese (Apple Crumble)",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total Cheese Tarts",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total No. of Premium",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total No. of Christmas",
+          "Total": 0.0
+        },
+        {
+          "Category": "Total Tart Shells Required",
+          "Total": 0.0
+        },
+        {
+          "Category": "Approx Butter Required (kg)",
+          "Total": 0.0
+        }
+      ],
+      "box_summary": [
+        {
+          "Item Name": "Berry Soy Cheese Tart - 6 inch / Happy Mother's Day (love)",
+          "Total Boxes": 1
+        },
+        {
+          "Item Name": "ALL",
+          "Total Boxes": 1
+        }
+      ],
+      "party_summary": [],
+      "order_ids": [
+        "#18241"
       ]
     },
     "10-05-2026": {
