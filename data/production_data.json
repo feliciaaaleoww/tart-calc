@@ -1,27 +1,27 @@
 {
-  "last_updated": "2026-08-15 09:24:09",
+  "last_updated": "2026-08-15 10:20:18",
   "datasets": {
     "16-08-2026": {
       "production_summary": [
         {
           "Flavor": "Strawberry",
-          "Total Qty": 100
+          "Total Qty": 105
         },
         {
           "Flavor": "Kiwi",
-          "Total Qty": 100
+          "Total Qty": 105
         },
         {
           "Flavor": "Lychee",
-          "Total Qty": 79
+          "Total Qty": 84
         },
         {
           "Flavor": "Mango",
-          "Total Qty": 100
+          "Total Qty": 105
         },
         {
           "Flavor": "Blueberry",
-          "Total Qty": 75
+          "Total Qty": 80
         },
         {
           "Flavor": "Peach",
@@ -59,7 +59,7 @@
       "total_summary": [
         {
           "Category": "Total Custard Tarts",
-          "Total": 520.0
+          "Total": 545.0
         },
         {
           "Category": "Cheese (Blueberry & Lotus)",
@@ -87,11 +87,11 @@
         },
         {
           "Category": "Total Tart Shells Required",
-          "Total": 676.0
+          "Total": 701.0
         },
         {
           "Category": "Approx Butter Required (kg)",
-          "Total": 9.657
+          "Total": 10.014
         }
       ],
       "box_summary": [
@@ -113,7 +113,7 @@
         },
         {
           "Item Name": "Fruit Tarts - 25pcs",
-          "Total Boxes": 3
+          "Total Boxes": 4
         },
         {
           "Item Name": "Fruit Tarts - 36pcs",
@@ -141,7 +141,7 @@
         },
         {
           "Item Name": "ALL",
-          "Total Boxes": 29
+          "Total Boxes": 30
         }
       ],
       "party_summary": [
@@ -166,7 +166,8 @@
         "#21635",
         "#21637",
         "#21650",
-        "#21651"
+        "#21651",
+        "#21654"
       ]
     },
     "30-08-2026": {
@@ -385,27 +386,19 @@
       "production_summary": [
         {
           "Flavor": "Strawberry",
-          "Total Qty": 11
+          "Total Qty": 5
         },
         {
           "Flavor": "Kiwi",
-          "Total Qty": 11
-        },
-        {
-          "Flavor": "Lychee",
-          "Total Qty": 6
+          "Total Qty": 5
         },
         {
           "Flavor": "Mango",
-          "Total Qty": 11
-        },
-        {
-          "Flavor": "Blueberry",
-          "Total Qty": 6
+          "Total Qty": 5
         },
         {
           "Flavor": "Peach",
-          "Total Qty": 6
+          "Total Qty": 0
         },
         {
           "Flavor": "Blueberry Cheese",
@@ -419,7 +412,7 @@
       "total_summary": [
         {
           "Category": "Total Custard Tarts",
-          "Total": 51.0
+          "Total": 15.0
         },
         {
           "Category": "Cheese (Blueberry & Lotus)",
@@ -447,11 +440,11 @@
         },
         {
           "Category": "Total Tart Shells Required",
-          "Total": 61.0
+          "Total": 25.0
         },
         {
           "Category": "Approx Butter Required (kg)",
-          "Total": 0.871
+          "Total": 0.357
         }
       ],
       "box_summary": [
@@ -460,17 +453,12 @@
           "Total Boxes": 1
         },
         {
-          "Item Name": "Fruit Tarts - 36pcs",
-          "Total Boxes": 1
-        },
-        {
           "Item Name": "ALL",
-          "Total Boxes": 2
+          "Total Boxes": 1
         }
       ],
       "party_summary": [],
       "order_ids": [
-        "#21640",
         "#21644"
       ]
     },
